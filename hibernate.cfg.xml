@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/hibernatedemo</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">simran</property>
+		<property name="hibernate.dialect"> org.hibernate.dialect.MySQL5Dialect</property>
+
+		<property name="current_session_context_class">thread</property>
+		
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">create</property>
+		<!-- <mapping class="com.admin.entities.TeacherDB" /> -->
+		<!-- <mapping class="com.admin.entities.SubjectDB" /> -->
+		<mapping class="com.to.Player" />
+		<mapping class="com.to.Team" />
+	</session-factory>
+</hibernate-configuration>
